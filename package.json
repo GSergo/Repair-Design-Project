@@ -1,0 +1,22 @@
+{
+  "name": "repair-design-project",
+  "version": "1.0.0",
+  "description": "Верстка макета Турецкий ремонт в Ростове-на-Дону",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSergo/Repair-Design-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSergo/Repair-Design-Project/issues"
+  },
+  "homepage": "https://github.com/GSergo/Repair-Design-Project#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
