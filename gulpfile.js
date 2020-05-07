@@ -13,12 +13,13 @@ function bs() {
   });
   watch("./*.html").on('change', browserSync.reload);
   watch("./sass/**/*.sass", serveSass);
+  watch("./sass/**/*.scss", serveSass);
   watch("./js/*.js").on('change', browserSync.reload);
 };
  
 //Отслеживание изменений
 function serveSass() {
-  return src("./sass/**/*.sass")    //  /**/* - в любых папках и подпапках
+  return src("./sass/**/*.sass", "./sass/**/*.scss")    //  /**/* - в любых папках и подпапках
     .pipe(sass())
     .pipe(autoprefixer({
       cascade: false
