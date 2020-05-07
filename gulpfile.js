@@ -15,9 +15,10 @@ function bs() {
   watch("./sass/**/*.sass", serveSass);
   watch("./js/*.js").on('change', browserSync.reload);
 };
-
+ 
+//Отслеживание изменений
 function serveSass() {
-  return src("./sass/*.sass")
+  return src("./sass/**/*.sass")    //  /**/* - в любых папках и подпапках
     .pipe(sass())
     .pipe(autoprefixer({
       cascade: false
