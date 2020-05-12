@@ -15,6 +15,30 @@
       margin-right: 1rem
   .hero
       height: 60rem
+@media screen and ( max-width: 760px )
+  .row
+    flex-direction: column
+    align-items: center
+  .design
+    background-color: $dark
+    &__card
+      margin-bottom: 5rem
+    &__text
+      font-size: 1rem
+      color: $light
+    &__section-title
+      line-height: 135.84%;
+      color: $light
+  .card 
+    &__text
+      margin-left: 0
+  .row
+    flex-direction: column
+    align-items: center
+  .types
+    &__card
+      margin-bottom: 5rem
+
 @media screen and ( max-width: 992px )
   .nav
     display: none
@@ -65,6 +89,20 @@
       font-size: 2rem
     &__text
       font-size: 1.29rem
+  .design
+    background-color: $dark
+    &__card
+      margin-bottom: 5rem
+    &__text
+      width: 75%
+      font-size: 1rem
+      line-height: 135.84%;
+      color: $light
+    &__section-title
+      color: $light
+  .card 
+    &__title
+      font-size: 1rem
 
 
 
