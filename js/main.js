@@ -1,3 +1,4 @@
+/*
 //Проверяет, прогрузилось ли DOM-дерево
 document.addEventListener("DOMContentLoaded", function(event) { 
   //Записываем модальное окно в переменную
@@ -39,6 +40,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   console.log(modal.classList);
+});
+
+*/
+
+//Код на jQuery
+$(document).ready(function () {
+  var modal = $('.modal'),
+      modalBtn = $('[data-toggle="modal"]'),
+      closeBtn = $('.modal__close');
+
+  modalBtn.on('click', function() {
+    modal.toggleClass('modal--visible');
+  });
+
+  closeBtn.on('click', function() {
+    modal.toggleClass('modal--visible');
+  });
+
+  //Функционал для кнопки прокрутки вверх
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+        $('.scrollup').fadeIn();
+    } else {
+        $('.scrollup').fadeOut();
+    }
+    });
+      
+    $('.scrollup').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
 
 
 });
