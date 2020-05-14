@@ -470,17 +470,8 @@ img {
   flex-direction: column;
   justify-content: center;
   padding-top: 100px;
-  background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(19, 19, 19, 0.7); }
   .hero__content {
     position: relative;
     max-width: 47.85rem;
