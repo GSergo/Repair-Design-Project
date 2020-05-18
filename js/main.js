@@ -91,6 +91,23 @@ $(document).ready(function () {
     next.css('left', prev.width() + 10 + bullets.width() + 10)  //Вычисляем расстояние до правой стрелки
     bullets.css('left', prev.width() + 10)
 
+    //initialize swiper when document ready
+    var Swiper2 = new Swiper ('.swiper-container-2', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination-2',
+        type: 'bullets',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next-2',
+        prevEl: '.swiper-button-prev-2',
+      }
+    })
+    var next2 = $('.swiper-button-next-2')
+    var prev2 = $('.swiper-button-prev-2')
+    var bullets2 = $('.swiper-pagination-2')
 
+    next2.css('left', prev2.width() + 10 + bullets2.width() + 10)  //Вычисляем расстояние до правой стрелки
+    bullets2.css('left', prev2.width() + 10)
 
 });
