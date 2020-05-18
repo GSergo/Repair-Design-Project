@@ -110,4 +110,7 @@ $(document).ready(function () {
     next2.css('left', prev2.width() + 10 + bullets2.width() + 10)  //Вычисляем расстояние до правой стрелки
     bullets2.css('left', prev2.width() + 10)
 
+    //анимация 
+
+    new WOW().init();
 });
