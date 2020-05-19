@@ -398,6 +398,12 @@ template {
     box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.5);
     transition: box-shadow 0.2s; }
 
+label.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
+
 .container {
   width: 85%;
   max-width: 1256px;
@@ -661,6 +667,9 @@ img {
   flex-direction: column;
   flex-basis: 30%; }
 
+.control__input {
+  color: #131313; }
+
 .control__label {
   margin-bottom: -7px; }
 
@@ -727,7 +736,8 @@ img {
 
 .projects {
   padding-top: 9.143rem;
-  padding-bottom: 30rem; }
+  padding-bottom: 30rem;
+  background: #131313 url("../img/bg-lines.svg") no-repeat center/cover; }
 
 .swiper-slide {
   display: flex;
@@ -812,17 +822,21 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
-      margin-bottom: 1rem; }
+  .modal__input:last-of-type {
+    margin-bottom: 1rem; }
   .modal__policy {
     margin-bottom: 2.7rem; }
   .modal__button {
     align-self: flex-end; }
 
-.steps__section-title {
-  margin-bottom: 6.57rem; }
+.steps {
+  background: #131313 url("../img/bg-lines.svg") no-repeat center/cover; }
+  .steps__section-title {
+    margin-bottom: 6.57rem; }
 
 .section-title__subtitle {
   display: flex;
@@ -915,6 +929,7 @@ img {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
   padding-top: 3rem; }
   .footer__wrap {
+    background: #181818 url("../img/bg-lines.svg") no-repeat center/cover;
     background-color: #181818;
     max-width: 63.07rem;
     margin: auto;

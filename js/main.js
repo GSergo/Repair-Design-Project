@@ -111,6 +111,101 @@ $(document).ready(function () {
     bullets2.css('left', prev2.width() + 10)
 
     //анимация 
-
     new WOW().init();
+
+    //валидация формы
+    //вспылывающая форма
+    $('.modal__form').validate({
+      errorClass: "invalid",  //меняем назвнаие класса
+      rules: {
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userPhone: {
+          required: true,
+          minlength: 17
+        },
+        userEmail: {
+          required: true,
+          email: true
+        }
+      }, //сообщения 
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя не короче 2-х букв"
+        },
+        userPhone: {
+          required: "Телефон обязателен",
+          minlength: "Номер слишком короткий, проверьте написание"
+        },
+        userEmail: {
+          required: "Обязательно укажите email",
+          email: "Укажите email в формате name@domain.com"
+        }
+      }
+    });
+
+    //форма в блоке онлайн контроль
+    $('.control__form').validate({
+      errorClass: "invalid",  //меняем назвнаие класса
+      rules: {
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userPhone: {
+          required: true,
+          minlength: 17
+        }
+      }, //сообщения 
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя не короче 2-х букв"
+        },
+        userPhone: {
+          required: "Телефон обязателен",
+          minlength: "Номер слишком короткий, проверьте написание"
+        },
+      }
+    });
+
+    //форма в футере
+    $('.footer__form').validate({
+      errorClass: "invalid",  //меняем назвнаие класса
+      rules: {
+        userName: {
+          required: true,
+          minlength: 2
+        },
+        userPhone: {
+          required: true,
+          minlength: 17
+        },
+        userQuestion: {
+          required: true,
+          minlength: 10
+        }
+      }, //сообщения 
+      messages: {
+        userName: {
+          required: "Имя обязательно",
+          minlength: "Имя не короче 2-х букв"
+        },
+        userPhone: {
+          required: "Телефон обязателен",
+          minlength: "Номер слишком короткий, проверьте написание"
+        },
+        userQuestion: {
+          required: "Вопрос обязателен",
+          minlength: "Вопрос должен быть не короче 10 букв"
+        }
+      }
+    });
+    //маска для номера телефона
+    $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
+
+
 });
