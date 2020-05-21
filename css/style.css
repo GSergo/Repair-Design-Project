@@ -834,7 +834,8 @@ img {
     align-self: flex-end; }
 
 .steps {
-  background: #131313 url("../img/bg-lines.svg") no-repeat center/cover; }
+  background: #131313 url("../img/bg-lines.svg") no-repeat center/cover;
+  padding-bottom: 33.3rem; }
   .steps__section-title {
     margin-bottom: 6.57rem; }
 
@@ -925,6 +926,76 @@ img {
   width: auto;
   bottom: -1px; }
 
+.team {
+  margin-top: -33rem; }
+  .team__card {
+    max-width: 19.446rem;
+    position: relative; }
+  .team__subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .team__text {
+    font-family: 'Futura Book';
+    color: #fff;
+    font-size: 1.428rem;
+    line-height: 1.928rem;
+    max-width: 32rem;
+    text-align: center;
+    margin-bottom: 4.786rem; }
+  .team__paragraph {
+    font-family: 'Futura Book';
+    font-size: 1.428rem;
+    line-height: 2.428rem;
+    max-width: 40.57rem;
+    text-align: center;
+    margin: auto;
+    margin-top: 5.143rem; }
+    .team__paragraph::before {
+      content: '';
+      display: block;
+      margin: auto;
+      margin-bottom: 1.214rem;
+      width: 55px;
+      height: 2px;
+      background-color: #E3B873; }
+
+.card__icon {
+  position: absolute;
+  top: -3.5rem;
+  left: -4rem; }
+
+.card__info {
+  position: relative;
+  padding: 1.571rem 1.5rem 1.714rem 1.5rem;
+  max-width: 17rem;
+  margin: -5.7rem auto 0 auto;
+  background-color: #fff; }
+
+.card__name {
+  font-family: 'Yeseva One', cursive;
+  font-size: 1.286rem;
+  text-align: center;
+  margin-bottom: 0.643rem;
+  color: #131313; }
+
+.card__job {
+  font-family: 'Futura Book';
+  font-size: 1.286rem;
+  text-align: center;
+  color: #959595; }
+
+.card__experience {
+  font-family: 'Yeseva One', cursive;
+  font-size: 0.928rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #E3B873;
+  padding: 0.92rem 1.66rem 1rem 1.62rem;
+  max-width: 17rem;
+  margin: 0 auto 1.1rem auto; }
+
 .footer {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
   padding-top: 3rem; }
@@ -981,10 +1052,27 @@ img {
   .hero {
     height: 60rem; } }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 992px) {
+  .nav {
+    display: none; }
+  .hero__instagram {
+    display: none; }
+  .hero__content {
+    margin-left: 0; } }
+
+@media screen and (max-width: 890px) {
   .row {
     flex-direction: column;
     align-items: center; }
+  .team__row {
+    flex-direction: column;
+    align-items: center; }
+  .team__paragraph {
+    display: none; }
+  .team__card {
+    margin-bottom: 5.999rem; }
+  .steps {
+    display: none; }
   .design {
     background-color: #131313; }
     .design__card {
@@ -1001,15 +1089,13 @@ img {
     flex-direction: column;
     align-items: center; }
   .types__card {
-    margin-bottom: 5rem; } }
-
-@media screen and (max-width: 992px) {
-  .nav {
-    display: none; }
-  .hero__instagram {
-    display: none; }
-  .hero__content {
-    margin-left: 0; } }
+    margin-bottom: 5rem; }
+  .team {
+    background-color: #131313;
+    margin-top: -8.428rem; }
+    .team__text {
+      font-size: 1.07rem;
+      min-width: 24.285rem; } }
 
 @media screen and (max-width: 570px) {
   .contacts__phone {
