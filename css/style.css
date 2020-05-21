@@ -928,6 +928,9 @@ img {
 
 .team {
   margin-top: -33rem; }
+  .team__row {
+    display: flex;
+    justify-content: space-around; }
   .team__card {
     max-width: 19.446rem;
     position: relative; }
@@ -1005,7 +1008,8 @@ img {
     max-width: 63.07rem;
     margin: auto;
     margin-bottom: 3.714rem;
-    padding: 2.5rem; }
+    padding: 2.5rem;
+    margin-top: -18.3rem; }
   .footer__title {
     text-transform: uppercase;
     font-family: 'Yeseva One', cursive;
@@ -1040,6 +1044,72 @@ img {
     background-color: #131313;
     padding: 4.285rem 0rem; }
 
+.clients {
+  margin-bottom: 21rem; }
+  .clients__subtitle {
+    display: flex;
+    justify-content: center; }
+  .clients__text {
+    font-family: 'Futura Book';
+    font-size: 1.428rem;
+    line-height: 1.928rem;
+    text-align: center;
+    max-width: 25.714rem;
+    margin-top: 1.984rem;
+    margin-bottom: 4.49rem; }
+  .clients__card {
+    max-width: 26.857rem; }
+
+.card {
+  position: relative; }
+  .card__client {
+    display: flex;
+    justify-content: center; }
+    .card__client img {
+      position: absolute;
+      left: 0;
+      top: 0; }
+  .card__client-name {
+    font-family: 'Yeseva One';
+    font-size: 1.286rem;
+    line-height: 1.643rem;
+    max-width: 14.07rem;
+    margin-left: 3.5rem;
+    margin-top: 1.3rem; }
+  .card__comment {
+    font-family: 'Futura Book';
+    font-size: 1.07rem;
+    line-height: 180%;
+    color: #959595;
+    max-width: 23.148rem;
+    margin-top: 2.776rem; }
+  .card__area-time {
+    display: flex; }
+  .card__area {
+    display: flex;
+    background-color: #E3B873;
+    color: #fff;
+    padding: 0.786rem 0.786rem 0.786rem 1.233rem;
+    max-width: 9.647rem;
+    margin-top: 2.57rem;
+    box-shadow: 5px 5px 20px rgba(227, 184, 115, 0.5); }
+  .card__time {
+    display: flex;
+    background-color: #E3B873;
+    color: #fff;
+    padding: 0.786rem 0.786rem 0.786rem 1.233rem;
+    max-width: 11.833rem;
+    margin-top: 2.57rem;
+    margin-left: 0.1rem;
+    box-shadow: 5px 5px 20px rgba(227, 184, 115, 0.5); }
+  .card__area-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.214rem;
+    text-transform: uppercase;
+    font-family: 'Yeseva One';
+    margin-left: 1.143rem; }
+
 @media screen and (max-width: 2330px) {
   .hero {
     height: 60rem; } }
@@ -1051,6 +1121,12 @@ img {
     margin-right: 1rem; }
   .hero {
     height: 60rem; } }
+
+@media screen and (max-width: 1110px) {
+  .clients {
+    display: none; }
+  .team {
+    margin-bottom: 21rem; } }
 
 @media screen and (max-width: 992px) {
   .nav {
