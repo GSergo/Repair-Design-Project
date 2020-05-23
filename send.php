@@ -3,6 +3,7 @@
   $userName = $_POST['userName'];
   $userEmail = $_POST['userEmail'];
   $userPhone = $_POST['userPhone'];
+  $userQuestion = $_POST['userQuestion'];
 
   
 
@@ -32,11 +33,16 @@
       // Content
       $mail->isHTML(true);                                  // Set email format to HTML
       $mail->Subject = 'Новая заявка с сайта';
-      $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, его почта: ${userEmail}";
+      $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, его почта: ${userEmail}, его вопрос: ${userQuestion}";
     
   
-      $mail->send();
-      header('Location: thanks.html');
-  } catch (Exception $e) {
-      echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
-  }
+    if ($mail->send()) {
+        echo "OK";
+    } else {
+        echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
+    }
+      
+      
+} catch (Exception $e) {
+    echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
+}

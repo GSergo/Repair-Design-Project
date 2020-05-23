@@ -116,7 +116,7 @@ $(document).ready(function () {
     //валидация формы
     //вспылывающая форма
     $('.modal__form').validate({
-      errorClass: "invalid",  //меняем назвнаие класса
+      errorClass: "invalid",  //меняем название класса
       rules: {
         userName: {
           required: true,
@@ -130,7 +130,8 @@ $(document).ready(function () {
           required: true,
           email: true
         }
-      }, //сообщения 
+      },
+      //сообщения 
       messages: {
         userName: {
           required: "Имя обязательно",
@@ -144,12 +145,24 @@ $(document).ready(function () {
           required: "Обязательно укажите email",
           email: "Укажите email в формате name@domain.com"
         }
+      },
+      //Отправляем форму через Ajax
+      submitHandler: function(form) {
+        $.ajax({
+          type: "POST",
+          url: "send.php",
+          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+          success: function (response) {
+            $(form)[0].reset();                      //Очистка формы после отправки
+            modal.removeClass('modal--visible');     //Закрываем форму
+          }
+        })
       }
     });
 
     //форма в блоке онлайн контроль
     $('.control__form').validate({
-      errorClass: "invalid",  //меняем назвнаие класса
+      errorClass: "invalid",  //меняем название класса
       rules: {
         userName: {
           required: true,
@@ -169,6 +182,17 @@ $(document).ready(function () {
           required: "Телефон обязателен",
           minlength: "Номер слишком короткий, проверьте написание"
         },
+      },
+      //Отправляем форму через Ajax
+      submitHandler: function(form) {
+        $.ajax({
+          type: "POST",
+          url: "send.php",
+          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+          success: function (response) {
+            $(form)[0].reset();                      //Очистка формы после отправки
+          }
+        })
       }
     });
 
@@ -202,6 +226,17 @@ $(document).ready(function () {
           required: "Вопрос обязателен",
           minlength: "Вопрос должен быть не короче 10 букв"
         }
+      },
+      //Отправляем форму через Ajax
+      submitHandler: function(form) {
+        $.ajax({
+          type: "POST",
+          url: "send.php",
+          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+          success: function (response) {
+            $(form)[0].reset();                      //Очистка формы после отправки
+          }
+        })
       }
     });
     //маска для номера телефона
