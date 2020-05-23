@@ -1043,6 +1043,26 @@ img {
   .footer__menu {
     background-color: #131313;
     padding: 4.285rem 0rem; }
+  .footer__map {
+    max-width: 66.07rem;
+    margin: 0 auto 4rem auto; }
+  .footer__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+  .footer__adress {
+    text-transform: uppercase;
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.428rem;
+    line-height: 2rem;
+    color: #E3B873;
+    max-width: 42.07rem;
+    text-align: center;
+    margin: auto; }
+  .footer__icons {
+    margin: 2rem auto 2rem auto; }
+  .footer__icon-message {
+    margin-right: 1.07rem; }
 
 .clients {
   margin-bottom: 21rem; }
@@ -1126,7 +1146,9 @@ img {
   .clients {
     display: none; }
   .team {
-    margin-bottom: 21rem; } }
+    margin-bottom: 21rem; }
+  .scrollup {
+    visibility: hidden; } }
 
 @media screen and (max-width: 992px) {
   .nav {
@@ -1168,10 +1190,15 @@ img {
     margin-bottom: 5rem; }
   .team {
     background-color: #131313;
-    margin-top: -8.428rem; }
+    margin-top: -8.428rem;
+    margin-bottom: 0; }
     .team__text {
       font-size: 1.07rem;
-      min-width: 24.285rem; } }
+      min-width: 24.285rem; }
+  .footer__wrap {
+    margin-top: 0; }
+  .footer__map {
+    max-width: 50.07rem; } }
 
 @media screen and (max-width: 570px) {
   .contacts__phone {
@@ -1224,4 +1251,26 @@ img {
     .design__section-title {
       color: #fff; }
   .card__title {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  .footer {
+    background: #131313;
+    padding-top: 0; }
+    .footer__wrap {
+      background: #131313;
+      padding: 0;
+      width: 100%; }
+    .footer__button {
+      width: 100%; }
+    .footer__form {
+      display: flex;
+      flex-direction: column; }
+    .footer__logo, .footer__contacts {
+      display: none; }
+    .footer__menu {
+      padding: 0; }
+  .team {
+    padding-bottom: 0; }
+  .policy__label {
+    text-align: left;
+    margin-left: 0;
+    justify-content: start; } }
