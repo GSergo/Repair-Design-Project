@@ -155,6 +155,7 @@ $(document).ready(function () {
           success: function (response) {
             $(form)[0].reset();                      //Очистка формы после отправки
             modal.removeClass('modal--visible');     //Закрываем форму
+            alert('кпкупкпкп')
           }
         })
       }
@@ -191,6 +192,7 @@ $(document).ready(function () {
           data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
           success: function (response) {
             $(form)[0].reset();                      //Очистка формы после отправки
+            alert('Корней');
           }
         })
       }
