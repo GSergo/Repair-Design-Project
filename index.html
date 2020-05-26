@@ -55,11 +55,11 @@
     <!-- БЛОК С ЗАВЕРШЕННЫМИ ПРОЕКТАМИ -->
     <section class="section projects section--dark">
       <div class="container">
-        <div class="row">
-          <div class="col-50">
+        <div class="row row__projects">
+          <div class="col-50 col-50__projects">
             <div class="section-title">
-              <h2 class="section-title__heading section-title--left section-title__heading--primary">Завершенные <span class="section-title__word">проекты</span></h2>
-              <p class="section-title__text">На сайте представлена ​​лишь небольшая часть работ, выполняемых нашей компанией. За 14 лет работы на строительном рынке мы осчастливили более 1000 семей</p>
+              <h2 class="section-title__heading section-title__ section-title--left section-title__heading--primary">Завершенные <span class="section-title__word">проекты</span></h2>
+              <p class="section-title__text section-title__projects">На сайте представлена ​​лишь небольшая часть работ, выполняемых нашей компанией. За 14 лет работы на строительном рынке мы осчастливили более 1000 семей</p>
               <!-- /.section-title__heading -->
             </div>
             <!-- /.section-title-->
@@ -120,7 +120,7 @@
               <div class="swiper-button-next"></div>
             </div>
           </div>
-          <div class="col-50">
+          <div class="col-50 col-50__projects">
             <div class="swiper-container">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper swiper-no-swiping">
@@ -707,7 +707,6 @@
     </section>
     <!-- /.section team -->
 
-
     <!-- ФУТЕР -->
     <footer class="footer section--dark">
       <div class="container">
@@ -741,9 +740,10 @@
             <img src="img/footer/icon-insta.svg" alt="Инстаграмм">
           </div>
         </div>
-        <div class="map footer__map">
-          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A524e6ca80f16c21e0b21a5d7d6724d66ed0263dca79bc78a2dca236b130d8806&amp;width=100%25&amp;height=465&amp;lang=ru_RU&amp;scroll=false"></script>
-        </div>
+        <div class="ymap-container">
+          <div class="loader loader-default"></div>
+          <div id="map-yandex"></div>
+        </div><!-- .ymap-container -->
       </div>
       <!-- /.container -->
       <div class="footer__menu">

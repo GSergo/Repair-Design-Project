@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Futura Book';
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff");
@@ -574,6 +575,7 @@ img {
     min-height: 6.92rem;
     background-color: #131313;
     font-family: 'Yeseva One';
+    font-weight: normal;
     font-size: 0.85rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -740,6 +742,12 @@ img {
   padding-bottom: 30rem;
   background: #131313 url("../img/bg-lines.svg") no-repeat center/cover; }
 
+.section-title__projects {
+  font-size: 1.286rem;
+  line-height: 2.07rem;
+  font-family: 'Futura Book';
+  font-weight: normal; }
+
 .swiper-slide {
   display: flex;
   flex-wrap: wrap; }
@@ -747,6 +755,10 @@ img {
     flex-basis: 50%;
     margin-bottom: 2.42rem;
     padding-bottom: 2rem; }
+  .swiper-slide__value {
+    font-size: 1rem;
+    font-family: 'Futura Book';
+    font-weight: normal; }
   .swiper-slide__heading {
     font-size: 1.25rem;
     line-height: 1.78rem;
@@ -1046,6 +1058,7 @@ img {
     padding: 4.285rem 0rem; }
   .footer__map {
     max-width: 66.07rem;
+    max-height: 38.21rem;
     margin: 0 auto 4rem auto; }
   .footer__text {
     display: flex;
@@ -1131,6 +1144,86 @@ img {
     font-family: 'Yeseva One';
     margin-left: 1.143rem; }
 
+/* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
+.ymap-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: url("../img/map.jpg") #ffffff no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, 0.2);
+  max-width: 63.07rem;
+  margin: 0 auto 4rem auto; }
+
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex {
+  position: relative;
+  z-index: 7;
+  max-width: 100%;
+  height: 33.21rem;
+  cursor: pointer;
+  background-color: transparent; }
+
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #131313;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.55); }
+
+.loader:after,
+.loader:before {
+  box-sizing: border-box; }
+
+.loader.is-active {
+  top: 0;
+  opacity: 1; }
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%; }
+
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(359deg); } }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(359deg); } }
+
+@-webkit-keyframes blink {
+  from {
+    opacity: .5; }
+  to {
+    opacity: 1; } }
+
+@keyframes blink {
+  from {
+    opacity: .5; }
+  to {
+    opacity: 1; } }
+
 @media screen and (max-width: 2330px) {
   .hero {
     height: 60rem; } }
@@ -1160,9 +1253,47 @@ img {
     margin-left: 0; } }
 
 @media screen and (max-width: 890px) {
-  .row {
-    flex-direction: column;
-    align-items: center; }
+  .projects {
+    padding-top: 0;
+    background-image: none; }
+  .col-50__projects {
+    width: 85%; }
+  .swiper-slide {
+    width: 100%; }
+    .swiper-slide__text {
+      margin-bottom: 0; }
+    .swiper-slide__heading {
+      font-size: 1rem; }
+    .swiper-slide img {
+      width: 100%; }
+  .swiper-container {
+    margin-bottom: 2.4rem; }
+  .swiper-wrapper {
+    margin-bottom: 3.027rem; }
+  .control {
+    background-color: #131313; }
+    .control__text {
+      font-size: 1rem;
+      line-height: 1.714rem; }
+    .control__form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem; }
+    .control__label {
+      color: #959595; }
+    .control__input {
+      color: #fff; }
+      .control__input-group {
+        margin-bottom: 3.5rem; }
+    .control__policy-label {
+      color: #fff;
+      display: flex;
+      order: 3; }
+    .control__text {
+      color: #fff;
+      margin-bottom: 1rem; }
+  .section-title__projects {
+    font-size: 1rem; }
   .team__row {
     flex-direction: column;
     align-items: center; }
@@ -1202,6 +1333,11 @@ img {
     max-width: 50.07rem; } }
 
 @media screen and (max-width: 570px) {
+  .control {
+    padding-top: 0; }
+    .control__video {
+      min-height: 20rem;
+      width: 100%; }
   .contacts__phone {
     margin-right: 0;
     color: #fff;
@@ -1223,7 +1359,16 @@ img {
       min-width: 22,86rem;
       margin-bottom: 1.85rem; }
     .hero__title {
-      font-size: 2.857rem; } }
+      font-size: 2.857rem; }
+  .footer__map {
+    position: relative;
+    max-height: 10.6rem;
+    width: 100%; }
+    .footer__map-wrap {
+      height: 100%;
+      width: 100%; }
+  #map-yandex {
+    height: 22.6rem; } }
 
 @media screen and (max-height: 520px) {
   .hero__scroll-down {
@@ -1253,6 +1398,9 @@ img {
       color: #fff; }
   .card__title {
     font-size: 1rem; }
+  .control__video {
+    min-height: 14rem;
+    width: 100%; }
   .footer {
     background: #131313;
     padding-top: 0; }
@@ -1274,4 +1422,6 @@ img {
   .policy__label {
     text-align: left;
     margin-left: 0;
-    justify-content: start; } }
+    justify-content: start; }
+  #map-yandex {
+    height: 18.6rem; } }
