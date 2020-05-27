@@ -6,6 +6,8 @@
   font-size: 0.93rem
   &:hover
     cursor: pointer
+  &:focus
+    outline: none
   &--primary
     background-color: $primary
     color: $light
@@ -13,10 +15,14 @@
     transition: box-shadow 0.2s
     &:hover
       box-shadow: none
+      transform: scale(1.02) 
   &--outline
     border: 1px solid $light
     background-color: transparent
     color: $light
+    &:hover
+      box-shadow: none
+      transform: scale(1.02) 
 .label
   font-size: 1.07rem
   &--light
@@ -31,11 +37,20 @@
   &--light
     &::placeholder
       color: $light
+#policy-checkbox1
+  margin-left: 1rem
+#policy-checkbox2
+  margin-right: 18.5rem
+#policy-checkbox3
+  margin-right: 10rem
 .policy
+  margin-right: 1rem 
   &__checkbox 
-    opacity: 0
+    opacity: 1
     visibility: hidden
-    &:checked + 
+    margin-top: 1rem
+    margin: auto
+    &:checked ~
       .policy__label
         &::before
           background: $primary url('../img/check.svg') no-repeat center /0.8rem
@@ -53,6 +68,10 @@
         margin-right: 0.64rem
       &--center
         justify-content: center
+.modal
+  &__close
+    outline: none
+  
 .scrollup
     position: fixed
     right: 0

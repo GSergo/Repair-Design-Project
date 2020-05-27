@@ -16,6 +16,9 @@
   &--visible
     opacity: 1
     visibility: visible
+    // &-tnx 
+    //   opacity: 1
+    //   visibility: visible
   &__dialog
     position: relative
     background: $dark url('../img/bg-lines.svg') no-repeat center
@@ -32,6 +35,18 @@
     border: none
     margin: 12px
     cursor: pointer
+    &-tnx
+      right: 309px
+      top: 252px
+      width: 29px
+      height: 28px
+      background: url('../img/close.svg') no-repeat center
+      border: none
+      margin: 12px
+      cursor: pointer
+      opacity: 0
+      visibility: hidden
+      position: fixed
   &__title
     font-family: 'Yeseva One', cursive
     font-size: 1.357rem
@@ -42,17 +57,33 @@
     display: flex
     flex-direction: column
   &__input
+    outline: none
+    &:focus
+      background: $dark
     &-group
       display: flex
       flex-direction: column
       margin-bottom: 3.428rem
     &:last-of-type
       margin-bottom: 1rem
+
   &__policy
     margin-bottom: 2.7rem
   &__button
     align-self: flex-end
-
+  &__thanks
+    display: flex
+    flex-direction: column
+    z-index: 250
+    width: 40%
+    height: 25%
+    color: $light
+    background-color: $dark
+  &__content
+    margin: auto
+  &__text
+    text-align: center
+    font-family: 'Yeseva One', cursive
   
 
 

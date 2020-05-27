@@ -47,16 +47,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //Код на jQuery
 $(document).ready(function () {
   var modal = $('.modal'),
+      // modalTnx = $('.modal__thanks'),
       modalBtn = $('[data-toggle="modal"]'),
       closeBtn = $('.modal__close');
+      // closeBtnTnx = $('.modal__close-tnx');
 
   modalBtn.on('click', function() {
     modal.toggleClass('modal--visible');
+    modalTnx.toggleClass('modal--visible-tnx');
   });
 
   closeBtn.on('click', function() {
     modal.toggleClass('modal--visible');
   });
+
+ 
+ //Функционал для плавной прокрутки при клике на якорные ссылки в меню
+  $("#menu, #menu2, #scrolldown").on("click","a", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 1500);
+  });
+
 
   //Функционал для кнопки прокрутки вверх
   $(window).scroll(function(){
@@ -71,8 +84,8 @@ $(document).ready(function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
     return false;
   });
-
-    //initialize swiper when document ready
+ 
+    //Слайдеры
     var mySwiper = new Swiper ('.swiper-container', {
       loop: true,
       pagination: {
@@ -87,28 +100,9 @@ $(document).ready(function () {
     var next = $('.swiper-button-next')
     var prev = $('.swiper-button-prev')
     var bullets = $('.swiper-pagination')
-
     next.css('left', prev.width() + 10 + bullets.width() + 10)  //Вычисляем расстояние до правой стрелки
     bullets.css('left', prev.width() + 10)
-
-    //initialize swiper when document ready
-    var Swiper2 = new Swiper ('.swiper-container-2', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination-2',
-        type: 'bullets',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next-2',
-        prevEl: '.swiper-button-prev-2',
-      }
-    })
-    var next2 = $('.swiper-button-next-2')
-    var prev2 = $('.swiper-button-prev-2')
-    var bullets2 = $('.swiper-pagination-2')
-
-    next2.css('left', prev2.width() + 10 + bullets2.width() + 10)  //Вычисляем расстояние до правой стрелки
-    bullets2.css('left', prev2.width() + 10)
+  
 
     //анимация 
     new WOW().init();
@@ -129,6 +123,9 @@ $(document).ready(function () {
         userEmail: {
           required: true,
           email: true
+        },
+        policyCheckbox: {
+          required: true,
         }
       },
       //сообщения 
@@ -144,20 +141,27 @@ $(document).ready(function () {
         userEmail: {
           required: "Обязательно укажите email",
           email: "Укажите email в формате name@domain.com"
+        },
+        policyCheckbox: {
+          required: "Дайте свое согласие"
         }
-      },
-      //Отправляем форму через Ajax
-      submitHandler: function(form) {
-        $.ajax({
-          type: "POST",
-          url: "send.php",
-          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
-          success: function (response) {
-            $(form)[0].reset();                      //Очистка формы после отправки
-            modal.removeClass('modal--visible');     //Закрываем форму
-          }
-        })
       }
+      //Отправляем форму через Ajax
+      // submitHandler: function(form) {
+      //   $.ajax({
+      //     type: "POST",
+      //     url: "send.php",
+      //     data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+      //     success: function (response) {
+      //       $(form)[0].reset();                      //Очистка формы после отправки
+      //       modal.removeClass('modal--visible');     //Закрываем форму
+      //       ym('64444222', 'reachGoal', 'form'); return true;  //Срабатывание цели при отправке формы
+      //       // closeBtn.on('click', function() {
+      //       //   modalTnx.toggleClass('modal--visible');
+      //       // });
+      //     }
+      //   })
+      // }
     });
 
     //форма в блоке онлайн контроль
@@ -171,6 +175,9 @@ $(document).ready(function () {
         userPhone: {
           required: true,
           minlength: 17
+        },
+        policyCheckbox: {
+          required: true,
         }
       }, //сообщения 
       messages: {
@@ -182,18 +189,22 @@ $(document).ready(function () {
           required: "Телефон обязателен",
           minlength: "Номер слишком короткий, проверьте написание"
         },
-      },
-      //Отправляем форму через Ajax
-      submitHandler: function(form) {
-        $.ajax({
-          type: "POST",
-          url: "send.php",
-          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
-          success: function (response) {
-            $(form)[0].reset();                      //Очистка формы после отправки
-          }
-        })
+        policyCheckbox: {
+          required: "Дайте свое согласие"
+        }
       }
+      //Отправляем форму через Ajax
+      // submitHandler: function(form) {
+      //   $.ajax({
+      //     type: "POST",
+      //     url: "send.php",
+      //     data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+      //     success: function (response) {
+      //       $(form)[0].reset();                      //Очистка формы после отправки
+      //       ym('64444222', 'reachGoal', 'form'); return true;  //Срабатывание цели при отправке формы
+      //     }
+      //   })
+      // }
     });
 
     //форма в футере
@@ -211,6 +222,9 @@ $(document).ready(function () {
         userQuestion: {
           required: true,
           minlength: 10
+        },
+        policyCheckbox: {
+          required: true,
         }
       }, //сообщения 
       messages: {
@@ -225,22 +239,26 @@ $(document).ready(function () {
         userQuestion: {
           required: "Вопрос обязателен",
           minlength: "Вопрос должен быть не короче 10 букв"
+        },
+        policyCheckbox: {
+          required: "Дайте свое согласие"
         }
-      },
-      //Отправляем форму через Ajax
-      submitHandler: function(form) {
-        $.ajax({
-          type: "POST",
-          url: "send.php",
-          data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
-          success: function (response) {
-            $(form)[0].reset();                      //Очистка формы после отправки
-          }
-        })
       }
+      //Отправляем форму через Ajax
+      // submitHandler: function(form) {
+      //   $.ajax({
+      //     type: "POST",
+      //     url: "send.php",
+      //     data: $(form).serialize(),                  //Передаем все данные с формы в виде одной строки
+      //     success: function (response) {
+      //       $(form)[0].reset();                      //Очистка формы после отправки
+      //       ym('64444222', 'reachGoal', 'form'); return true;  //Срабатывание цели при отправке формы
+      //     }
+      //   })
+      // }
     });
     //маска для номера телефона
-    $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
+    $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "Ваш номер телефона:"});
 
 
     //Карта 
@@ -366,4 +384,22 @@ $(document).ready(function () {
     ymap();
 
     });
+
+    //Функционал для видео в блоке онлайн-контроль
+    var player;
+    $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '465',
+        width: '100%',
+        videoId: 'ftcGpb4NBNE',
+        events: {
+          'onReady': videoPlay
+        }
+      });
+    })
+    //Автоматический запуск видео при клике на нашу кнопку
+    function videoPlay(event) {
+      event.target.playVideo();
+    }
+
 });

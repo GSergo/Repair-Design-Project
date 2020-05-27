@@ -1,6 +1,6 @@
 @media screen and ( max-width: 2330px )
   .hero
-    height: 60rem
+     height: 100vh
            
 @media screen and ( max-width: 1280px )
   html
@@ -9,7 +9,8 @@
     &__item
       margin-right: 1rem
   .hero
-      height: 60rem
+     height: 100vh
+
 @media screen and ( max-width: 1110px )
   .clients
     display: none
@@ -17,6 +18,7 @@
     margin-bottom: 21rem
   .scrollup
     visibility: hidden
+
 @media screen and ( max-width: 992px )
   .nav
     display: none
@@ -25,6 +27,19 @@
       display: none
     &__content
       margin-left: 0
+  .button
+    &--primary
+      &:hover
+        transform: none
+        box-shadow: 0px 5px 15px rgba($primary, 0.2)
+    &--outline
+      &:hover
+        transform: none
+        box-shadow: none
+  .contacts
+    &__phone
+      &:hover
+        box-shadow: none
 @media screen and ( max-width: 890px )
   .projects
     padding-top: 0
@@ -78,6 +93,8 @@
       display: none
     &__card
       margin-bottom: 5.999rem
+    &__section-title
+      color: $light
   .steps
     display: none
   .design
@@ -152,11 +169,23 @@
   #map-yandex 
     height: 22.6rem
     
-
 @media screen and ( max-height: 520px ) 
   .hero
     &__scroll-down
       display: none
+  .modal
+    &__title
+      margin-bottom: 0rem
+    &__input
+      margin-bottom: 0.3rem
+      &-group
+        margin-bottom: 0rem
+      &:last-of-type
+        margin-bottom: 0.35rem
+    &__policy
+      margin-bottom: 0.15rem
+    &__button
+      margin: auto 
 
 @media screen and ( max-width: 463px ) 
   .hero
@@ -190,6 +219,7 @@
   .footer
     background: $dark
     padding-top: 0
+    padding-bottom: 13.5rem
     &__wrap
       background: $dark
       padding: 0
@@ -203,6 +233,14 @@
       display: none
     &__menu
       padding: 0
+    &__text
+      position: absolute
+      margin: 23rem 1.5rem 0 0
+    &__adress
+      font-size: 1.3rem
+      font-style: normal
+      font-weight: normal
+      text-align: center
   .team
     padding-bottom: 0
   .policy
@@ -212,6 +250,7 @@
       justify-content: start
   #map-yandex 
     height: 18.6rem
+
 
 
 

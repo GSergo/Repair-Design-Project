@@ -1,21 +1,21 @@
 <?php
 
-  $userName = $_POST['userName'];
-  $userEmail = $_POST['userEmail'];
-  $userPhone = $_POST['userPhone'];
-  $userQuestion = $_POST['userQuestion'];
+    $userName = $_POST['userName'];
+    $userEmail = $_POST['userEmail'];
+    $userPhone = $_POST['userPhone'];
+    $userQuestion = $_POST['userQuestion'];
 
   
 
   
-  // Load Composer's autoloader
-  require 'phpmailer/Exception.php';
-  require 'phpmailer/PHPMailer.php';
-  require 'phpmailer/SMTP.php';
-  // Instantiation and passing `true` enables exceptions
-  $mail = new PHPMailer\PHPMailer\PHPMailer();
+    // Load Composer's autoloader
+    require 'phpmailer/Exception.php';
+    require 'phpmailer/PHPMailer.php';
+    require 'phpmailer/SMTP.php';
+    // Instantiation and passing `true` enables exceptions
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
   
-  try {
+    try {
       //Server settings
       $mail->SMTPDebug = 0;                      // Enable verbose debug output
       $mail->isSMTP();                                            // Send using SMTP
@@ -36,13 +36,8 @@
       $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, его почта: ${userEmail}, его вопрос: ${userQuestion}";
     
   
-    if ($mail->send()) {
-        echo "OK";
-    } else {
-        echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
+      $mail->send();
+      header('Location: thanks.html');     
+    } catch (Exception $e) {
+      echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
     }
-      
-      
-} catch (Exception $e) {
-    echo "Письмо не было отправлено. Код ошибки: {$mail->ErrorInfo}";
-}
